@@ -101,9 +101,9 @@ public class Main {
         System.out.println("The buyer named " + kupiec.firstName + " paid me and still has" + kupiec.cash + "PLN");
 
 
-        App knurstagram = new App("knurstagram", "latest", 0.0);
-        App pigify = new App("pigify", "5.1.2", 10.0);
-        App messenger = new App("messenger", "latest", 0.0);
+        App knurstagram = new App("knurstagram", "latest", 0.0, "www.knurstagram.oink");
+        App pigify = new App("pigify", "5.1.2", 10.0,"www.pigify.oink");
+        App messenger = new App("messenger", "latest", 0.0,"www.messenger.com");
 
         me.mobile.installAnApp(knurstagram, me);
         me.mobile.installAnApp(pigify, me);

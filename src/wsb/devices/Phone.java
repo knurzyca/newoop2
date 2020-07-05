@@ -31,6 +31,7 @@ public class Phone extends Device {
         }
         applications.add(app);
         System.out.println("Application " + app.getName() + " installed");
+        System.out.println("Application address is  " + app.getHttp ());
     }
 
     public void installAnApp(String name) {
