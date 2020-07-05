@@ -1,12 +1,19 @@
 package wsb.devices;
+import wsb.creatures.Human;
+import java.util.*;
+
 
 import static java.lang.System.out;
 
 public class Phone extends Device {
+    final Double screenSize;
 
-    public Phone(String producer, String model, double price, int yearOfProduction) {
-        super (producer, model, price, yearOfProduction);
+
+    public Phone(String producer, String model, double screenSize) {
+        super (producer, model);
+        this.screenSize = screenSize;
     }
+    @Override
     public void turnOn() {
         out.println("phone is turned on");
     }

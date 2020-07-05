@@ -1,8 +1,5 @@
 package wsb.devices;
-
-// import wsb.Soldable;
-// import wsb.creatures.Human;
-
+import wsb.devices.Soldable;
 import wsb.creatures.Human;
 
 public class Car {

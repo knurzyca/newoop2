@@ -1,26 +1,24 @@
 package wsb.creatures;
-
 import java.io.File;
 
 
-public class Animal implements Feedable {
+public class Animal implements Edible  {
         final String species; //Fields store data
         public Double weight; // task 1.1 Add field final String species and private Double weight in Animal
         public String name;
-        File pic;
+
         // task 1.2 Add a constructor Animal, which set initial weight of an Animal. Initial weight should depends on species
         private static Double NEW_DOG_WEIGHT = 5.4;
         private static Double NEW_LION_WEIGHT = 39.2;
         private static Double NEW_CAT_WEIGHT = 4.3;
-        private static Double NEW_OTHER_WEIGHT=100.0;
-        private static Double DEFAULT_FEED_WEIGHT = 1.0;
+       // private static Double NEW_OTHER_WEIGHT=100.0;
+        //private static Double DEFAULT_FEED_WEIGHT = 1.0;
 
         public Animal(String species) {
             this.species = species;
-            getWeight();
-            takeForAWalk();
 
-           System.out.println(" Hurray, there is a new animal in the family! " +name);
+
+           System.out.println(" Hurray, there is a new animal in the family! ");
             switch (species) {
                 case "dog": {
                     weight = NEW_DOG_WEIGHT;
@@ -34,33 +32,20 @@ public class Animal implements Feedable {
                     weight = NEW_CAT_WEIGHT;
                     break;
                 }
-                default: {
-                    weight = NEW_OTHER_WEIGHT;
-                    break;
                 }
             }
-        }
 
-  public void getWeight() {
-
-        if (this.species.equals("dog"))
-            weight = 5.4;
-        else if (this.species.equals("cat"))
-            weight = 4.3;
-        else
-            weight = 0.0;
+    Double getWeight() {
+        return weight;
     }
 
 
     //task 1.4 add void feed()
-    public void feed() {
-        feed(DEFAULT_FEED_WEIGHT);
-    }
-        public void feed(Double food) {
+    public void feed()  {
             if (weight == 0) {
                 System.out.println(" sooh it's too late to feed" + name + "- it's already dead");
             } else {
-                weight += food;
+               ++ weight;
                 System.out.println(name + " has been feeded YUMMMMMM");
             }
         }
@@ -85,13 +70,11 @@ public class Animal implements Feedable {
             }
         }
 
-        protected void kill() {
-            System.out.println(" Animal died");
-            this.weight = 0.0;
 
-        }
+    @Override
+    public void eat() throws Exception {
+        System.out.println("Animal has been eaten");
 
-        public String toString() {return " Hello, it's your " +species +name;
-        }
+    }
 
 }
