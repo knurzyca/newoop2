@@ -2,6 +2,8 @@ package wsb;
 
 import wsb.creatures.Animal;
 import wsb.creatures.Human;
+import wsb.creatures.FarmAnimal;
+import wsb.creatures.Pet;
 import wsb.devices.Car;
 import wsb.devices.Phone;
 import wsb.devices.Device;
@@ -11,11 +13,14 @@ public class Main {
     public static void main(String[] args) throws Exception {
         //lesson1
 
-        Animal dog = new Animal("dog");
+        Animal dog = new Pet ("dog");
         dog.name = "Szynek";
 
-        Animal cat = new Animal("cat");
+        Animal cat = new Pet ("cat");
         cat.name = "Kulek";
+
+        FarmAnimal pig = new FarmAnimal ("pig");
+        pig.beEaten();
 
         Phone szajsung = new Phone("Samsung", "s20", 5000.00);
         Phone knurofon = new Phone("Samsung", "S10", 3000.00);
@@ -24,6 +29,11 @@ public class Main {
         me.firstName = "Kasia";
         me.lastName = "Pogo";
         me.pet = dog;
+        me.pet.feed();
+        me.pet.feed();
+        me.pet.takeForAWalk();
+        me.pet.feed();
+
         me.mobile = szajsung;
         me.setSalary(10000.00);  //task3 Salary
         System.out.println("I earn " +me.getSalary() +"PLN");
@@ -46,8 +56,11 @@ public class Main {
         knur.firstName = "Knuroslaw";
         knur.lastName = "Knurski";
         knur.pet = cat;
-        // knur.pet.feed();
-        // System.out.println(cat);
+        knur.pet.feed();
+        knur.pet.feed();
+        knur.pet.takeForAWalk ();
+        knur.pet.feed();
+        System.out.println(cat);
 
         knur.mobile = knurofon;
         knur.setSalary(5000.00);
@@ -80,12 +93,11 @@ public class Main {
         kupiec.pet = dog;
 
 
-        me.car.sell(kupiec, me, 2220.0);
+        me.car.sell(kupiec, me, 22220.0);
 
         System.out.println("I currently have " + me.cash    + "PLN");
-        System.out.println("Car Buyer has" + kupiec.cash + "PLN");
-        System.out.println("Car Buyer owns now  " +cityCar);
-        System.out.println("The buyer named" + kupiec.firstName + " paid me and still has" + kupiec.cash + "PLN");
+        System.out.println("Car Buyer has " + kupiec.cash + "PLN");
+        System.out.println("The buyer named " + kupiec.firstName + " paid me and still has" + kupiec.cash + "PLN");
 
 
     }
