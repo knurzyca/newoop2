@@ -34,10 +34,8 @@ public class Main {
         me.pet.feed();
         me.pet.takeForAWalk();
         me.pet.feed();
-
         me.mobile = szajsung;
-        me.setSalary(10000.00);  //task3 Salary
-        System.out.println("I earn " +me.getSalary() +"PLN");
+
         me.setCash(100000.00);
 
 
@@ -51,6 +49,8 @@ public class Main {
         cityCar.turnOn();
         cityCar.refuel ();
 
+        System.out.println(me.getCar(0));
+        System.out.println("My car is now: " + me.getCar(0));
 
 
 
@@ -66,7 +66,7 @@ public class Main {
 
         knur.mobile = knurofon;
         knur.setSalary(5000.00);
-        System.out.println("Knur earns " +knur.getSalary());
+
         knur.increaseSalary(1000.00);
 
         knur.setCash(100000.00);

@@ -9,6 +9,7 @@ public class Car {
     public double enginepower;
     public String plates;
     public double price;
+    public Double value;
 
     public Car(String model, String producer, int year, double enginepower, double price) {
         this.model = model;
@@ -37,15 +38,20 @@ public class Car {
     }
     
     //task buy sell - "me" as a seller
-    public void sell(Human carBuyer, Human me, double price) throws Exception{
-        if (carBuyer.cash >= price) {
-            carBuyer.car = this;
-            carBuyer.cash -= price;
-            me.car = null;
-            me.cash += price;
-            System.out.println(me.firstName + " sell a car (" + this.model + ") to " + carBuyer + " for " + price);
-        } else {
-            throw new Exception("sorry, your funds are not enough");
+    public void sell(Human buyer, Human seller, double price) throws Exception{
+        if(!seller.hasACar(this)){
+            throw new Exception("seller don't have a car");
         }
+        if(!buyer.hasAFreePlace()){
+            throw new Exception("bouer dont have a plase");
+        }
+        if(buyer.cash < price){
+            throw new Exception("afwfwaawfawf");
+        }
+        buyer.removeCar(this);
+        seller.addCar(this);
+        buyer.cash -= price;
+        seller.cash += price;
+        System.out.println("great, transaction is done");
     }
 }
