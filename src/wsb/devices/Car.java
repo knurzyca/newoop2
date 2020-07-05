@@ -18,6 +18,24 @@ public class Car {
         this.price = price;
     }
 
+    public Car(String producer, String model, int year, double enginepower) {
+    }
+
+    public Car(String producer, String model, Integer year) {
+    }
+
+    public void refuel() {
+
+    }
+
+    public void turnOn() {
+        System.out.println("this car can start in 3..2..1..GO");
+    }
+
+    public String toString() {
+        return this.producer + " " + this.model + " " + this.plates;
+    }
+    
     //task buy sell - "me" as a seller
     public void sell(Human carBuyer, Human me, double price) throws Exception{
         if (carBuyer.cash >= price) {
@@ -30,7 +48,4 @@ public class Car {
             throw new Exception("sorry, your funds are not enough");
         }
     }
-
-
-    // public void refuel();
 }

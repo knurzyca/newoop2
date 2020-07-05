@@ -1,13 +1,16 @@
 package wsb.devices;
 
-public class ElectricCar extends Car {
-    public ElectricCar(String model, String producer, int year, Double enginepower, double price) {
-        super(model, producer, year, enginepower, price);
+public class ElectricCar extends Car{
+    public ElectricCar(String producer, String model, Integer year) {
+        super(producer, model, year );
     }
 
+    @Override
+    public void refuel() {
+        System.out.println("Refueled with electric power");
+    }
+
+    public String toString(){
+        return "That is an electric car " + super.toString();
+    }
 }
-   /* public void refuel() {
-        System.out.println("Charged by electricity");
-    }
-
-    */

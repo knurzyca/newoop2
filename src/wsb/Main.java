@@ -48,7 +48,8 @@ public class Main {
         cityCar.plates = "PO G0";
         me.car = cityCar;
         System.out.println( " Kasia Pogo drives " +cityCar.producer +cityCar.model + " with plates " + cityCar.plates);
-
+        cityCar.turnOn();
+        cityCar.refuel ();
 
 
 
@@ -79,12 +80,13 @@ public class Main {
         System.out.println(knurmobil);
         System.out.println("Knur has a car " +knur.car.model);
         System.out.println(" with plates " + knur.car.plates);
-
+        knurmobil.turnOn();
+        knurmobil.refuel ();
 
         Car electro = new Car("Tesla", "X", 2020, 6.6, 300000);
         electro.plates = "EL ZA";
         System.out.println(" We have " +electro.model + " with plates " +electro.plates +" which costs" +electro.price);
-
+        electro.turnOn();
 
 
         Human kupiec = new Human();
