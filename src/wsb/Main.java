@@ -6,6 +6,7 @@ import wsb.creatures.FarmAnimal;
 import wsb.creatures.Pet;
 import wsb.devices.Car;
 import wsb.devices.Phone;
+import wsb.devices.App;
 import wsb.devices.Device;
 
 public class Main {
@@ -100,6 +101,21 @@ public class Main {
         System.out.println("The buyer named " + kupiec.firstName + " paid me and still has" + kupiec.cash + "PLN");
 
 
+        App knurstagram = new App("knurstagram", "latest", 0.0);
+        App pigify = new App("pigify", "5.1.2", 10.0);
+        App messenger = new App("messenger", "latest", 0.0);
+
+        me.mobile.installAnApp(knurstagram, me);
+        me.mobile.installAnApp(pigify, me);
+        me.mobile.installAnApp(messenger, me);
+        System.out.println(me.mobile.applications);
+
+        System.out.println(me.mobile.isInstalled(knurstagram));
+        System.out.println(me.mobile.isInstalled(messenger));
+        System.out.println(me.mobile.isInstalled(pigify));
+        System.out.println(me.mobile.isInstalled("knurstagram"));
+        System.out.println(me.mobile.isInstalled("messenger"));
+        System.out.println(me.mobile.isInstalled("pigify"));
     }
 
 
